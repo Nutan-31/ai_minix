@@ -74,7 +74,7 @@ body {
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
 
-/* --- Ambient Background Effects (VIBRANT) --- */
+/* --- Ambient Background Effects (PROFESSIONAL & SLEEK) --- */
 .bg-effects {
   position: fixed;
   top: 0;
@@ -89,57 +89,51 @@ body {
 .glow-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px); /* Slightly less blur to make colors richer */
-  animation: float 20s infinite ease-in-out alternate;
-  mix-blend-mode: screen; /* Makes the colors pop beautifully when they overlap */
+  filter: blur(160px); /* Massive blur creates a smooth, matte gradient */
+  animation: float 25s infinite ease-in-out alternate;
+  opacity: 0.12; /* Subdued, professional opacity */
+  mix-blend-mode: normal; /* Removed the harsh screen blending */
 }
 
-/* Vibrant Neon Green */
+/* Deep Corporate Blue */
 .blob-1 {
-  top: -10%;
-  left: -5%;
-  width: 50vw;
-  height: 50vw;
-  background: rgba(0, 242, 96, 0.35); /* Cranked up from 0.12 */
+  top: -20%;
+  left: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: #0ea5e9; 
   animation-delay: 0s;
 }
 
-/* Deep Accent Blue */
+/* Subtle Emerald / Teal */
 .blob-2 {
-  bottom: -15%;
-  right: -5%;
-  width: 60vw;
-  height: 60vw;
-  background: rgba(0, 112, 243, 0.40); /* Cranked up from 0.12 */
+  bottom: -20%;
+  right: -10%;
+  width: 70vw;
+  height: 70vw;
+  background: #10b981; 
   animation-direction: alternate-reverse;
-  animation-duration: 25s;
-}
-
-/* Amber Yellow */
-.blob-3 {
-  top: 20%;
-  left: 35%;
-  width: 35vw;
-  height: 35vw;
-  background: rgba(250, 204, 21, 0.25);
-  animation-delay: -10s;
   animation-duration: 30s;
 }
 
-/* NEW: Electric Purple for rich depth */
+/* Soft Indigo */
+.blob-3 {
+  top: 30%;
+  left: 40%;
+  width: 50vw;
+  height: 50vw;
+  background: #6366f1; 
+  animation-delay: -15s;
+  animation-duration: 35s;
+}
+
+/* Hide the 4th blob to keep the lighting minimal and clean */
 .blob-4 {
-  top: 50%;
-  right: 25%;
-  width: 45vw;
-  height: 45vw;
-  background: rgba(138, 43, 226, 0.35);
-  animation-delay: -5s;
-  animation-duration: 22s;
-  animation-direction: alternate-reverse;
+  display: none;
 }
 
 @keyframes float {
   0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(5%, 10%) scale(1.1); }
-  100% { transform: translate(-5%, -5%) scale(0.9); }
+  50% { transform: translate(3%, 5%) scale(1.05); }
+  100% { transform: translate(-3%, -3%) scale(0.95); }
 }
