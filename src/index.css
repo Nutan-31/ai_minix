@@ -1,0 +1,145 @@
+:root {
+  --bg-dark: #07090e;
+  --panel-bg: rgba(15, 21, 35, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.04);
+  --glass-highlight: rgba(255, 255, 255, 0.1);
+  --text-main: #f8fafc;
+  --text-muted: #8b95a5;
+  --neon-green: #00f260;
+  --amber-yellow: #facc15;
+  --ruby-red: #ff3366;
+  --accent-blue: #0070f3;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  border-top: 1px solid var(--glass-highlight);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.widget-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.text-glow-green { color: var(--neon-green); text-shadow: 0 0 12px rgba(0, 242, 96, 0.4); }
+.text-glow-yellow { color: var(--amber-yellow); text-shadow: 0 0 12px rgba(250, 204, 21, 0.4); }
+.text-glow-red { color: var(--ruby-red); text-shadow: 0 0 12px rgba(255, 51, 102, 0.4); }
+.text-muted { color: var(--text-muted); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* --- Ambient Background Effects (VIBRANT) --- */
+.bg-effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.glow-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px); /* Slightly less blur to make colors richer */
+  animation: float 20s infinite ease-in-out alternate;
+  mix-blend-mode: screen; /* Makes the colors pop beautifully when they overlap */
+}
+
+/* Vibrant Neon Green */
+.blob-1 {
+  top: -10%;
+  left: -5%;
+  width: 50vw;
+  height: 50vw;
+  background: rgba(0, 242, 96, 0.35); /* Cranked up from 0.12 */
+  animation-delay: 0s;
+}
+
+/* Deep Accent Blue */
+.blob-2 {
+  bottom: -15%;
+  right: -5%;
+  width: 60vw;
+  height: 60vw;
+  background: rgba(0, 112, 243, 0.40); /* Cranked up from 0.12 */
+  animation-direction: alternate-reverse;
+  animation-duration: 25s;
+}
+
+/* Amber Yellow */
+.blob-3 {
+  top: 20%;
+  left: 35%;
+  width: 35vw;
+  height: 35vw;
+  background: rgba(250, 204, 21, 0.25);
+  animation-delay: -10s;
+  animation-duration: 30s;
+}
+
+/* NEW: Electric Purple for rich depth */
+.blob-4 {
+  top: 50%;
+  right: 25%;
+  width: 45vw;
+  height: 45vw;
+  background: rgba(138, 43, 226, 0.35);
+  animation-delay: -5s;
+  animation-duration: 22s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5%, 10%) scale(1.1); }
+  100% { transform: translate(-5%, -5%) scale(0.9); }
+}
